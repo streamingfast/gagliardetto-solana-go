@@ -156,6 +156,7 @@ type TokenBalance struct {
 	// Pubkey of the token's mint.
 	Mint          solana.PublicKey `json:"mint"`
 	UiTokenAmount *UiTokenAmount   `json:"uiTokenAmount"`
+	ProgramId     solana.PublicKey `json:"programId"`
 }
 
 type UiTokenAmount struct {
@@ -214,6 +215,15 @@ type TransactionMeta struct {
 	Rewards []BlockReward `json:"rewards"`
 
 	LoadedAddresses LoadedAddresses `json:"loadedAddresses"`
+
+	ReturnData ReturnData `json:"returnData"`
+
+	ComputeUnitsConsumed *uint64 `json:"computeUnitsConsumed"`
+}
+
+type ReturnData struct {
+	ProgramId string   `json:"programId"`
+	Data      []string `json:"data"`
 }
 
 type InnerInstruction struct {
