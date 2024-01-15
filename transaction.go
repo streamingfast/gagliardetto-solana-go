@@ -106,6 +106,9 @@ type CompiledInstruction struct {
 
 	// The program input data encoded in a base-58 string.
 	Data Base58 `json:"data"`
+
+	// The instruction stack height.
+	StackHeight uint32 `json:"StackHeight"`
 }
 
 func (ci *CompiledInstruction) ResolveInstructionAccounts(message *Message) ([]*AccountMeta, error) {
