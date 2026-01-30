@@ -219,6 +219,8 @@ type TransactionMeta struct {
 	ReturnData ReturnData `json:"returnData"`
 
 	ComputeUnitsConsumed *uint64 `json:"computeUnitsConsumed"`
+
+	CostUnits *uint64 `json:"costUnits"`
 }
 
 type ReturnData struct {
